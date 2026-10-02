@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des voisins</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="header-content">
+        <div>
+            <h1>🏢 Gestion des voisins</h1>
+            <p>Liste des habitants du bâtiment</p>
+        </div>
+
+        <div class="stats">
+            <div>
+                <strong id="totalResidents">56</strong>
+                <span>Portes</span>
+            </div>
+
+            <div>
+                <strong id="paidCount">0</strong>
+                <span>Payés</span>
+            </div>
+
+            <div>
+                <strong id="unpaidCount">56</strong>
+                <span>Non payés</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <section class="toolbar">
+
+        <div class="search-box">
+            🔎
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Rechercher nom, prénom ou porte..."
+            >
+        </div>
+
+        <select id="floorFilter">
+            <option value="all">Tous les étages</option>
+            <option value="1">1er étage</option>
+            <option value="2">2e étage</option>
+            <option value="3">3e étage</option>
+            <option value="4">4e étage</option>
+            <option value="5">5e étage</option>
+            <option value="6">6e étage</option>
+            <option value="7">7e étage</option>
+            <option value="8">8e étage</option>
+            <option value="9">9e étage</option>
+            <option value="10">10e étage</option>
+            <option value="11">11e étage</option>
+            <option value="12">12e étage</option>
+            <option value="13">13e étage</option>
+            <option value="14">14e étage</option>
+        </select>
+
+        <select id="paymentFilter">
+            <option value="all">Tous les paiements</option>
+            <option value="paid">Payé</option>
+            <option value="unpaid">Non payé</option>
+        </select>
+
+    </section>
+
+    <section class="table-container">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Étage</th>
+                    <th>N° Porte</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Paiement</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="neighborsTable">
+            </tbody>
+
+        </table>
+
+        <div id="emptyMessage" class="empty">
+            Aucun voisin trouvé.
+        </div>
+
+    </section>
+
+</main>
+
+<!-- Fenêtre modification -->
+
+<div id="modal" class="modal">
+
+    <div class="modal-box">
+
+        <button class="close" id="closeModal">×</button>
+
+        <h2>Modifier le voisin</h2>
+
+        <p id="modalDoor"></p>
+
+        <label>Nom</label>
+        <input type="text" id="nameInput">
+
+        <label>Prénom</label>
+        <input type="text" id="firstNameInput">
+
+        <label>Paiement</label>
+
+        <select id="paymentInput">
+            <option value="unpaid">❌ Non payé</option>
+            <option value="paid">✅ Payé</option>
+        </select>
+
+        <button id="saveButton" class="save-button">
+            Enregistrer
+        </button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
